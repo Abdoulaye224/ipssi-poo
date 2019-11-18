@@ -7,20 +7,20 @@ require_once('vendor/autoload.php');
 
 $climate = new League\CLImate\CLImate;
 
-/**
- * il s'agit d'une classe diviseur
+/***
+ * Une fonction diviseur qui prend
+ *
  * 
  */
 class Diviseur {
 
     public function division($index, $diviseur)
     {
-        $valeurs = [17, 12, 15, 38, 29, 157, 89, -22, 0, 5]; // chaque nombre comporte un indice 0 1 2 3..
+        $valeurs = [17, 12, 15, 38, 29, 157, 89, -22, 0, 5];
 
         if($index > count($valeurs)) 
         {
            throw new NotExistIndexException();
-
         }
         elseif ((is_numeric($index) === false) || (is_numeric($diviseur) === false))
         {
@@ -29,9 +29,9 @@ class Diviseur {
         else 
         {
             return $valeurs[$index] / $diviseur;
-
         }
-}}
+    }
+}
 
 
 do {

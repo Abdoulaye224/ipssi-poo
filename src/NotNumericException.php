@@ -6,6 +6,6 @@ class NotNumericException extends IpssiPooException
 {
     public function __construct()
     {
-        $this->message = 'ce neest pas un  entier';
+        $this->message = 'it\'s not an integer'; //
     }
 }
