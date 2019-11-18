@@ -11,14 +11,12 @@ use Ipssi\Evaluation\Useless;
 new Useless();
 
 
-$doc = [ 
-new document(new texte(27, 27), new RGB(255, 0, 0), 23, 23),
- new document(new image(23, 267), new RGB(255, 0, 0), 23, 23),
- new document(new texte(23.2, 7), new RGB(255, 0, 0), 23, 23),
- new document(new image(23, 267), new RGB(255, 0, 0), 23, 23),
-];
 
-foreach ($doc as $doc) {
+$doc = new document('Doc1', new RGB(255, 0, 0), 23, 23);
+
+$doc->ajoutElement(new image(12,12));
+$doc->ajoutElement(new texte(23,12));
+
 echo $doc->toString();
-}
+
 

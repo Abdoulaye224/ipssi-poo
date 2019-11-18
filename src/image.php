@@ -33,7 +33,7 @@ class image extends element
 
     public function toString(): String
     {
-            $string = $this->getType() . PHP_EOL;;
+            $string = $this->getType() . PHP_EOL;
             $string .= 'height : ' . $this->getHeight() . PHP_EOL;
             $string .= 'width : ' . $this->getWidth() . PHP_EOL;
 

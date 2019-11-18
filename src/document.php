@@ -19,15 +19,17 @@ class document
     private $element;
 
 
-    public function __construct(element $element, RGB $color, int $positionX, int $positionY)
+    public function __construct(string  $name, RGB $color, int $positionX, int $positionY)
     {
-        $this->element = $element;
+       $this->name = $name;
         $this->color = $color;
         $this->positionX = $positionX;
         $this->positionY = $positionY;
+        $this->element = [];
+
     }
 
-    public function getElement(): element
+    public function getElement(): array
     {
         return $this->element;
     }
@@ -51,22 +53,27 @@ class document
         return $this->positionY;
     }
 
-    public function addElement(): array
-    {
 
-    }
 
     public function toString(): String
     {
-    
-    $String = $this->getElement()->toString() . PHP_EOL;
+
+        $String = '===========' . $this->getName() . '=========' . PHP_EOL;
     $String .= $this->getColor()->toString() . PHP_EOL;
     $String .="Position X : " . $this->getPositionX() . PHP_EOL;
     $String .="position Y : " . $this->getPositionY() . PHP_EOL;
 
+    foreach ($this->element as $el){
+        $String .= $el->toString();
+    }
         return $String;
 
     }
 
-
+    public function ajoutElement($forme)
+    {
+        if ($forme instanceof element) {
+            array_push($this->element, $forme);
+        }
     }
+}
